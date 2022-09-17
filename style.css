@@ -9,7 +9,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background: #838383;
+  background: #8d8d8d;
   overflow: hidden;
 }
 
@@ -17,11 +17,11 @@ body {
     position: fixed;
     top: 0%;
     right: 0%;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background: #000;
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-radius: 68% 32% 47% 53% / 33% 81% 19% 67%;
     display: flex;
     justify-content: center;
@@ -29,61 +29,79 @@ body {
     flex-direction: column;
 }
 
-
+.text-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
 #logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: fill 2s ease-in-out forwards 17s;
-  animation: top-title 4s ease-in-out forwards 19.5s;
+    stroke: white;
+    fill: white;
+  /* animation: fill 2s ease-in-out forwards 15.5s; */
 }
-
 
 #logo path:nth-child(1) {
-  stroke-dasharray: 214;
-  stroke-dashoffset: 214;
-  animation: line-anim 2s ease forwards 5s;
+    opacity: 0;
+  animation: fadeIn 2.5s ease forwards 2s,  line 2s linear forwards 14s, fill 2s linear forwards 14.5s;
 }
 #logo path:nth-child(2) {
-  stroke-dasharray: 549;
-  stroke-dashoffset: 549;
-  animation: line-anim 2s ease forwards 6s;
+    opacity: 0;
+  animation: fadeIn 2.5s ease forwards 3s ,  line 2s linear forwards 13s, fill 2s linear forwards 13.5s;
 }
 #logo path:nth-child(3) {
-  stroke-dasharray: 504;
-  stroke-dashoffset: 504;
-  animation: line-anim 2s ease forwards 7s;
+    opacity: 0;
+  animation: fadeIn 2.5s ease forwards 4s ,  line 2s linear forwards 12s, fill 2s linear forwards 12.5s;
 }
 #logo path:nth-child(4) {
-  stroke-dasharray: 504;
-  stroke-dashoffset: 504;
-  animation: line-anim 2s ease forwards 8s;
+    opacity: 0;
+  animation: fadeIn 2.5s ease forwards 4s,  line 2s linear forwards 11s, fill 2s linear forwards 12.5s;
 }
 #logo path:nth-child(5) {
-  stroke-dasharray: 456;
-  stroke-dashoffset: 456;
-  animation: line-anim 2s ease forwards 9s;
+    opacity: 0;
+  animation: fadeIn 2s ease forwards 5s ,  line 2s linear forwards 11s, fill 2s linear forwards 11.5s;
 }
 #logo path:nth-child(6) {
-  stroke-dasharray: 615;
-  stroke-dashoffset: 615;
-  animation: line-anim 2s ease forwards 10s;
+    opacity: 0;
+  animation: fadeIn 2.5s ease forwards 6s, line 2s linear forwards 10s, fill 2s linear forwards 10.5s;
 }
 #logo path:nth-child(7) {
-  stroke-dasharray: 520;
-  stroke-dashoffset: 520;
-  animation: line-anim 2s ease forwards 11s;
+    opacity: 0;
+  animation: fadeIn 2.5s ease forwards 7s ,  line 2s linear forwards 11.5s, fill 2s linear forwards 12s;
 }
 
-@keyframes line-anim {
-  to {
-    stroke-dashoffset: 0;
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
   }
+
+@keyframes line {
+    from {
+      stroke: #fff;
+    }
+    to {
+      stroke: #000;
+    }
+  }
+
+@keyframes fill {
+    from {
+        fill: #fff;
+    }
+    to {
+        fill: #000;
+    }
 }
 
-  @keyframes top-title  {
+
+  /* @keyframes top-title  {
     0%{
         top: 50%;
         left: 50%;
@@ -99,41 +117,357 @@ body {
         top:5%;
         left: 35%;
         transform: translate(0%, -35%);
-        fill: black;
     }
-  }
+  } */
+
+
+
+/* ---------- Engrenage Container ---------- */
+
+.engrenage{
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.engrenage1{
+    top: 37.2%;
+    left:33.4%;
+}
+.engrenage2{
+    top: 38.4%;
+    left: 36.4%;
+}
+.engrenage3{
+    top: 42.3%;
+    left: 35.3%;
+}
+
+.big-gear{
+    transform-origin: center;
+    opacity: 1;
+    animation: big-gear 20s infinite linear;
+}
+
+.medium-gear{
+    transform-origin: center;
+    opacity: 1;
+    animation: medium-gear 20s infinite linear;
+}
+
+.small-gear{
+    transform-origin: center;
+    opacity: 1;
+    animation: small-gear 20s infinite linear;
+}
+
+@keyframes big-gear {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes medium-gear {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes small-gear {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+
+    }
+}
+
+/* ---------- Pen ---------- */
+
+.pen{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 27.5%;
+    right: 27%;
+    background: url("./svg/pen.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    offset-path: path("M199 48L1 1");
+    transform: rotate(-180deg);
+    opacity: 0;
+    animation: writing 2s linear forwards 7s, follow-line 0.25s linear forwards 8.75s, disappear 1s linear forwards 11s;
+}
+
+.pen-line{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 35%;
+    right: 23.5%;
+}
+
+@keyframes writing {
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+    25%{
+        opacity: 1;
+        transform: translateX(-70%);
+    }
+    50%{
+        opacity: 1;
+        transform: translateX(70%);
+    }
+    75%{
+        opacity: 1;
+        transform: translateX(-90%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes follow-line {
+    from {
+        offset-distance: 0%;
+    }
+    to {
+        offset-distance: 100%;
+    }   
+}
+
+
+/* ---------- Ink ---------- */
+
+
+section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100vh;
+}
+
+.encrier{
+    position: relative;
+    top: 30%;
+    left: 62%;
+    width: 100px;
+    height: 100px;
+    background: #444;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transform-origin: bottom center;
+    box-shadow: 0px 2px 4px #000;
+    opacity: 0;
+    animation: appearfromtop 1s linear forwards 7s, balance 2s linear forwards 8s, disappear 1s linear forwards 12s;
+}
+
+@keyframes balance {
+    0% {
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(25deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-40deg);
+    }
+    100% {
+        transform: rotate(-80deg);
+    }
+    
+}
+
+.encrier::before{
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45%;
+    height: 20px;
+    border: 5px solid #818181;
+    border-radius: 50%;
+    box-shadow: 0 5px #222;
+}
+
+.encrier::after{
+    content: "";
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 20px;
+    background: #81818115;
+    border-radius: 50%;
+}
+
+.liquid{
+    position: absolute;
+    top: 51%;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: rgb(0, 0, 0);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transform-origin: top center;
+    opacity: 0;
+    animation: appearfromtop 1s linear forwards 6s, balanceLiquid 1.5s linear forwards 8s, disappear 1s linear forwards 12s;
+
+}
+
+@keyframes balanceLiquid {
+    0% {
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(60deg);
+    }
+    
+}
+
+.liquid::before{
+    content:"";
+    position: absolute;
+    top: -5px;
+    width: 100%;
+    height: 10px;
+    background: rgb(36, 36, 36);
+    border-radius: 50%;
+}
+
+@keyframes appearfromtop {
+    0%{
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(-25%);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+/* ---------- Goutte ---------- */
+
+.drop{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 38.5%;
+    right: 44%;
+    background: url("./svg/drop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    offset-path: path("M110.5 13.4999C110.5 13.4999 41.5005 -42 41.5 84.5C41.4995 211 1.5 290 1.5 290");
+    transform: rotate(-90deg);
+    opacity: 0;
+    animation: drop 2s ease-out forwards 10s , followPathDrop 2s linear forwards 9.75s;
+}
+
+.line-drop{
+    position: absolute;
+    top: 39%;
+    right: 30%;
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes followPathDrop {
+    to {
+        offset-distance: 100%;
+    }
+    
+}
+
 
 /* ---------- cube container ---------- */
 
 .icon-container{
     width: 100%;
     height: 100vh;
-    position:relative;
     display: flex;
 }
 
 .cube{
     height: 150px;
     position: absolute;
-    top: 51%;
-    right:28%;
+    top: 51.5%;
+    right:27.5%;
     transform: translate(-50%, -50%);
-    animation: disparition 2s ease-in-out forwards 18s;
 
 }
 
 .cube1{
-    animation: cube 1s ease-in-out forwards 12s;
+    animation: cube 1s ease-in-out forwards 15s;
     opacity: 0;
     box-shadow: 10px 20px 10px #000;
 }
 
 .cube2{
-    animation: cube 1s ease-in-out forwards 13s;
+    animation: cube 1s ease-in-out forwards 16s;
     opacity: 0;
 }
 .cube3{
-    animation: cube 1s ease-in-out forwards 14s;
+    animation: cube 1s ease-in-out forwards 17s;
     opacity: 0;
 }
 
@@ -159,108 +493,31 @@ body {
 
 }
 
-/* ---------- Engrenage Container ---------- */
-
-.engrenage{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    animation: disparition 2s ease-in-out forwards 20s;
-}
-.engrenage1{
-    top: 37.2%;
-    left:34.4%;
-}
-.engrenage2{
-    top: 38.4%;
-    left: 37.4%;
-}
-.engrenage3{
-    top: 42.3%;
-    left: 36.4%;
-}
-
-.big-gear{
-    transform-origin: center;
-    opacity: 0;
-    animation: big-gear 16s linear forwards 4s;
-}
-
-.medium-gear{
-    transform-origin: center;
-    opacity: 0;
-    animation: medium-gear 16s linear forwards 4s;
-}
-
-.small-gear{
-    transform-origin: center;
-    opacity: 0;
-    animation: small-gear 16s linear forwards 4s;
-}
-
-@keyframes big-gear {
-    0% {
-        opacity: 0;
-        transform: rotate(0deg);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes medium-gear {
-    0% {
-        opacity: 0;
-        transform: rotate(0deg);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(-360deg);
-    }
-}
-
-@keyframes small-gear {
-    0% {
-        opacity: 0;
-        transform: rotate(0deg);
-    }
-
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(360deg);
-
-    }
-}
-
-@keyframes disparition {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
 
 /* ---------- Plane ---------- */
 
 .plane{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     position: absolute;
-    top: 10%;
-    left: -2%;
+    top: 5%;
+    left: 42%;
     background: url("./svg/plane.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    offset-path: path("M-49 2C184 98.5 149.734 -39.3193 195.5 550.364C234.5 1052.86 565.311 384.611 763.5 625C861 728 989.422 761.985 1120.57 761.985C1215.31 761.985 1197.34 689.779 1331.4 735.731C1444.5 774.5 1643.23 675.323 1626.34 516.803C1592.4 198.054 1747.94 142.669 1920 224.525");
-    animation: follow-path 6s linear 15s;
+    offset-path: path("M0 369.5H620C620 369.5 780.5 359 909 308.5C1037.5 258 1180 165 1180 165L1296.5 83L1413 1");
+    opacity: 0;
+    animation: apparition 2s linear forwards 18s, follow-path 3s linear forwards 19s;
+}
+
+@keyframes apparition {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes follow-path {
@@ -270,27 +527,5 @@ body {
     
 }
 
-/* ---------- Plane ---------- */
-
-.pen{
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: 30%;
-    left: 0;
-    background: url("./svg/pen.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top;
-    offset-path: path("M-114 2C763.6 18.8 1000.67 24.6667 1009.5 25.5L538.5 233.5H1948.5");
-    animation: pen-path 6s linear;
-
-}
 
 
-@keyframes pen-path {
-    to {
-        offset-distance: 100%;
-    }
-    
-}

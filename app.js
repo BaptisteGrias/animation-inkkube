@@ -1,23 +1,19 @@
-const loader = document.querySelector('.loader');
 const percentage = document.querySelector('.percentage');
 
 let count = 0;
 
 window.addEventListener('load', () => {
-  let loading = setInterval(animate, 100);
+  let loading = setInterval(animate, 220);
+
   function animate() {
     if(count === 100) {
-      clearInterval(loading);
+      setInterval(loading);
     } else {
       count++;
-      percentage.innerHTML = count + '%';
+      percentage.innerHTML = count;
     }
   }
-}, 50);
-
-
-
-
+});
 
 
 // const logo = document.querySelectorAll('#logo path'); 
