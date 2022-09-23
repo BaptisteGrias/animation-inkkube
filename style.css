@@ -37,40 +37,38 @@ body {
     align-items: center;
     position: relative;
 }
-
 #logo {
-    stroke: white;
-    fill: white;
-  /* animation: fill 2s ease-in-out forwards 15.5s; */
+    z-index: 9999;
+    fill: #fff;
 }
 
 #logo path:nth-child(1) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 2s,  line 2s linear forwards 14s, fill 2s linear forwards 14.5s;
+  animation: fadeIn 2.5s ease forwards 8s,  fill6 1s linear forwards 21.5s;
 }
 #logo path:nth-child(2) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 3s ,  line 2s linear forwards 13s, fill 2s linear forwards 13.5s;
+  animation: fadeIn 2.5s ease forwards 9s , fill5 1s linear forwards 20.5s;
 }
 #logo path:nth-child(3) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 4s ,  line 2s linear forwards 12s, fill 2s linear forwards 12.5s;
+  animation: fadeIn 2.5s ease forwards 10s , fill4 1s linear forwards 19.5s;
 }
 #logo path:nth-child(4) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 4s,  line 2s linear forwards 11s, fill 2s linear forwards 12.5s;
+  animation: fadeIn 2.5s ease forwards 10s, fill4 1s linear forwards 19.5s;
 }
 #logo path:nth-child(5) {
     opacity: 0;
-  animation: fadeIn 2s ease forwards 5s ,  line 2s linear forwards 11s, fill 2s linear forwards 11.5s;
+  animation: fadeIn 2s ease forwards 11s , fill3 1s linear forwards 18.5s;
 }
 #logo path:nth-child(6) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 6s, line 2s linear forwards 10s, fill 2s linear forwards 10.5s;
+  animation: fadeIn 2.5s ease forwards 12s, fill 1s linear forwards 17s;
 }
 #logo path:nth-child(7) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 7s ,  line 2s linear forwards 11.5s, fill 2s linear forwards 12s;
+  animation: fadeIn 2.5s ease forwards 13s , fill2 1s linear forwards 18.5s;
 }
 
 @keyframes fadeIn {
@@ -82,22 +80,63 @@ body {
     }
   }
 
-@keyframes line {
-    from {
-      stroke: #fff;
-    }
-    to {
-      stroke: #000;
-    }
-  }
-
 @keyframes fill {
     from {
-        fill: #fff;
+      fill: #fff;
     }
     to {
-        fill: #000;
+      fill: url(#lg);
     }
+}
+
+@keyframes fill2 {
+    from {
+      fill: #fff;
+    }
+    to {
+      fill: url(#lg2);
+    }
+
+}
+
+@keyframes fill3 {
+    from {
+      fill: #fff;
+    }
+    to {
+      fill: url(#lg3);
+    }
+
+}
+
+@keyframes fill4 {
+    from {
+      fill: #fff;
+    }
+    to {
+      fill: url(#lg4);
+    }
+
+}
+
+@keyframes fill5 {
+    from {
+      fill: #fff;
+    }
+    to {
+      fill: url(#lg5);
+    }
+
+}
+
+@keyframes fill6 {
+    from {
+      fill: #fff;
+    }
+    to {
+      fill: url(#lg6);
+    }
+
 }
 
 
@@ -124,42 +163,55 @@ body {
 
 /* ---------- Engrenage Container ---------- */
 
+
 .engrenage{
     position: absolute;
     transform: translate(-50%, -50%);
 }
+
 .engrenage1{
-    top: 37.2%;
-    left:33.4%;
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    left:42%;
+    opacity: 0;
+    animation: see 1s linear forwards, mouvement1 3s linear forwards 3s;
 }
 .engrenage2{
-    top: 38.4%;
-    left: 36.4%;
+    width: 250px;
+    height: 250px;
+    top: 45%;
+    left: 55%;
+    opacity: 0;
+    animation: see 1s linear forwards, mouvement2 3s linear forwards 3s;
+
 }
 .engrenage3{
-    top: 42.3%;
-    left: 35.3%;
+    width: 200px;
+    height: 200px;
+    top: 63%;
+    left: 50%;
+    opacity: 0;
+    animation: see 2s linear forwards, mouvement3 3s linear forwards 3s;
+
 }
 
 .big-gear{
     transform-origin: center;
-    opacity: 1;
-    animation: big-gear 20s infinite linear;
+    animation: big-and-small-gear 20s infinite linear 1.5s ;
 }
 
 .medium-gear{
     transform-origin: center;
-    opacity: 1;
-    animation: medium-gear 20s infinite linear;
+    animation: medium-gear 20s infinite linear 1.5s ;
 }
 
 .small-gear{
     transform-origin: center;
-    opacity: 1;
-    animation: small-gear 20s infinite linear;
+    animation:big-and-small-gear 20s infinite linear 1.5s ;
 }
 
-@keyframes big-gear {
+@keyframes big-and-small-gear {
     0% {
         transform: rotate(0deg);
     }
@@ -177,69 +229,93 @@ body {
     }
 }
 
-@keyframes small-gear {
-    0% {
-        transform: rotate(0deg);
+@keyframes see {
+    from {
+        opacity: 0;
     }
-    100% {
-        transform: rotate(360deg);
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes mouvement1{
+    from{
+        width: 300px;
+        height: 300px;
+        top: 40%;
+        left:42%;
+    }
+
+    to { 
+        width: 70px;
+        height: 70px;
+        top: 37.2%;
+        left:33.4%;
+
+    }
+}
+@keyframes mouvement2{
+    from {
+        width: 250px;
+        height: 250px;
+        top: 45%;
+        left: 55%;
+
+    }
+    to {
+        width: 56px;
+        height: 56px;
+        top: 38.4%;
+        left: 36.4%;
+
+    }
+}
+
+@keyframes mouvement3{
+    from {
+        width: 200px;
+        height: 200px;
+        top: 63%;
+        left: 50%;
+
+    }
+    to {
+        width: 40px;
+        height: 40px;
+        top: 42.3%;
+        left: 35.4%;
 
     }
 }
 
 /* ---------- Pen ---------- */
 
-.pen{
+/* .pen{
     width: 100px;
     height: 100px;
     position: absolute;
-    top: 27.5%;
-    right: 27%;
-    background: url("./svg/pen.svg");
+    top: 25.5%;
+    right: 40%;
+    background: url("./svg/pen2.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    offset-path: path("M199 48L1 1");
-    transform: rotate(-180deg);
+    transform-origin: center;
+    offset-path: path("M0 125H46.8934C46.8934 125 168.079 -103.179 190 59.5226");
     opacity: 0;
-    animation: writing 2s linear forwards 7s, follow-line 0.25s linear forwards 8.75s, disappear 1s linear forwards 11s;
+    animation: appear 1s linear forwards 14.5s, follow-line 2.5s linear forwards 16s, disappear 1s linear forwards 22s;
 }
 
-.pen-line{
-    width: 100px;
-    height: 100px;
+ .line-pen{
+    stroke: black;
+    opacity: 0;
     position: absolute;
-    top: 35%;
-    right: 23.5%;
-}
+    top: 31%;
+    right: 35%;
+} */
 
-@keyframes writing {
-    0% {
-        opacity: 0;
-        transform: translateX(0);
-    }
-    25%{
-        opacity: 1;
-        transform: translateX(-70%);
-    }
-    50%{
-        opacity: 1;
-        transform: translateX(70%);
-    }
-    75%{
-        opacity: 1;
-        transform: translateX(-90%);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
 
 @keyframes follow-line {
-    from {
-        offset-distance: 0%;
-    }
     to {
         offset-distance: 100%;
     }   
@@ -257,126 +333,85 @@ section {
     width: 100%;
     height: 100vh;
 }
-
 .encrier{
-    position: relative;
+    width: 200px;
+    height: 200px;
+    position: absolute;
     top: 30%;
-    left: 62%;
-    width: 100px;
-    height: 100px;
-    background: #444;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    transform-origin: bottom center;
-    box-shadow: 0px 2px 4px #000;
+    right: 33%;
     opacity: 0;
-    animation: appearfromtop 1s linear forwards 7s, balance 2s linear forwards 8s, disappear 1s linear forwards 12s;
+    animation: appear 2s linear forwards 14s, disappear 1s linear forwards 17s;
 }
 
-@keyframes balance {
-    0% {
-        transform: rotate(0deg);
-    }
-    25%{
-        transform: rotate(25deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-    75%{
-        transform: rotate(-40deg);
-    }
-    100% {
-        transform: rotate(-80deg);
-    }
+#liquide {
+    animation: fluide1 1s linear 1 normal forwards 15s;
+}
+    @keyframes fluide1 { 
+        0% {
+            transform: translate(40.5px,40px) rotate(0deg)
+        } 
+        100% {
+            transform: translate(40.5px,40px) rotate(-90deg)
+        }
+    } 
     
+#liquide2 {
+    animation: fluide2 1s linear 1 normal forwards 15s;
 }
-
-.encrier::before{
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 45%;
-    height: 20px;
-    border: 5px solid #818181;
-    border-radius: 50%;
-    box-shadow: 0 5px #222;
+    @keyframes fluide2 {
+            0% {
+            d: path('M70.6075,40C70.6075,40,71.107485,71.9617,71.107485,71.9617L10.39247,71.9617L10.39247,40C12.864421,41.876405,17.777641,42.847597,27.957,40C44.582329,36.6208,45.124677,34.504389,54.7634,40C59.511237,43.274755,67.235015,42.67994,70.6075,40Z')
+        } 
+        12.5% {
+            d: path('M71.728819,42.815254C71.728819,42.815254,71.107485,71.9617,71.107485,71.9617L10.39247,71.9617L9.82178,32.542351C12.293731,34.418756,17.777641,42.847597,27.957,40C40.017813,37.553104,40.646173,33.761222,50.284896,39.256833C55.032733,42.531588,68.356334,45.495194,71.728819,42.815254Z')
+        } 
+        25% {
+            d: path('M72.049122,46.449129C72.049122,46.449129,71.107485,71.9617,71.107485,71.9617L10.39247,71.9617L9.199624,26.616289C11.671575,28.492694,14.172026,36.872985,24.351385,34.025388C36.412198,31.578492,39.207851,37.626602,48.846574,43.122213C55.300402,51.112464,68.676637,49.129069,72.049122,46.449129Z')
+        }
+        37.5% {
+            d: path('M72.369425,50.083003C72.369425,50.083003,71.107485,71.9617,71.107485,71.9617L10.39247,71.9617L8.577468,20.690227C11.049419,22.566632,10.56641,30.898372,20.745769,28.050775C32.806582,25.603879,31.249583,37.814037,40.888306,43.309648C45.636143,46.584403,68.99694,52.762943,72.369425,50.083003Z')
+        } 
+        50% {
+            d: path('M72.408382,62.430719C72.408382,62.430719,71.107485,71.9617,71.107485,71.9617L10.39247,71.9617L7.570995,13C10.042946,14.876405,11.845558,17.478498,19.007504,22.517865C28.899244,26.417601,34.679117,38.004387,44.31784,43.499998C56.169818,54.989225,69.035897,65.110659,72.408382,62.430719Z')
+        } 
+        62.5% {
+            d: path('M71.107486,71.961699C71.107486,71.961699,71.107485,71.9617,71.107485,71.9617L10.39247,71.9617L7.570995,13C10.042946,14.876405,25.678581,9.853186,32.840527,14.892554C42.732267,18.79229,34.679117,38.004387,44.31784,43.499998C56.169818,54.989225,67.735001,74.641639,71.107486,71.961699Z')
+        } 
+        75% {
+            d: path('M46.340536,57.374082C49.901074,61.241641,50.20679,72.09543,46.318728,75.630213L10.39247,71.9617L7.570995,13C11.987899,15.862718,29.888369,9.36365,33.21936,7.924567C42.130889,4.631668,31.414689,20.602682,38.847483,26.967875C48.115077,39.445023,39.097137,42.730621,46.340536,57.374082Z')
+        } 
+        87.5% {
+            d: path('M39.144859,49.577517C40.763286,51.335499,44.912169,72.022486,43.144868,73.629206L10.39247,71.9617L7.570995,13C10.24875,13.757057,27.689707,8.381933,31.254061,4.204908C40.14374,-1.476447,44.207666,6.361883,42.816745,16.205402C41.746803,32.634233,33.337395,36.440295,39.144859,49.577517Z')
+        } 
+        100% {
+            d: path('M40.499984,47.920558C46.607955,61.318596,38.316892,67.735935,40.499984,71.9617L10.39247,71.9617L7.570995,13C8.799459,12.002339,30.625505,7.5,25.286275,0C40.954004,-11.985813,42.429168,10.720719,40.499984,20.012948C36.618786,38.707372,33.286275,30.373143,40.499984,47.920558Z')
+        }
+    } 
+#liquide3 {
+    animation: fluide3 1s linear 1 normal forwards 15s;
 }
-
-.encrier::after{
-    content: "";
-    position: absolute;
-    top: 43%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 20px;
-    background: #81818115;
-    border-radius: 50%;
-}
-
-.liquid{
-    position: absolute;
-    top: 51%;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    background: rgb(0, 0, 0);
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    transform-origin: top center;
-    opacity: 0;
-    animation: appearfromtop 1s linear forwards 6s, balanceLiquid 1.5s linear forwards 8s, disappear 1s linear forwards 12s;
-
-}
-
-@keyframes balanceLiquid {
-    0% {
-        transform: rotate(0deg);
-    }
-    25%{
-        transform: rotate(-20deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-    75%{
-        transform: rotate(0deg);
-    }
+@keyframes fluide3 {
+        0% {
+        transform: translate(40.5px,40px) rotate(0deg)
+    } 
     100% {
-        transform: rotate(60deg);
+        transform: translate(40.5px,40px) rotate(-90deg)
     }
-    
 }
 
-.liquid::before{
-    content:"";
-    position: absolute;
-    top: -5px;
-    width: 100%;
-    height: 10px;
-    background: rgb(36, 36, 36);
-    border-radius: 50%;
-}
 
-@keyframes appearfromtop {
-    0%{
+@keyframes appear {
+    0% {
         opacity: 0;
-        transform: translateY(-50%);
     }
-    50%{
+    50% {
         opacity: 1;
-        transform: translateY(-25%);
-
     }
-    100%{
+    100% {
         opacity: 1;
-        transform: translateY(0%);
-
     }
 }
+
 
 @keyframes disappear {
     0% {
@@ -392,19 +427,19 @@ section {
 /* ---------- Goutte ---------- */
 
 .drop{
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     position: absolute;
     top: 38.5%;
     right: 44%;
-    background: url("./svg/drop.svg");
+    background: url("./svg/drop.svg");;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     offset-path: path("M110.5 13.4999C110.5 13.4999 41.5005 -42 41.5 84.5C41.4995 211 1.5 290 1.5 290");
     transform: rotate(-90deg);
     opacity: 0;
-    animation: drop 2s ease-out forwards 10s , followPathDrop 2s linear forwards 9.75s;
+    animation: drop 2s ease-out forwards 15.75s, followPathDrop 2s linear forwards 16s;
 }
 
 .line-drop{
@@ -421,6 +456,9 @@ section {
         opacity: 1;
     }
     25% {
+        opacity: 1;
+    }
+    40% {
         opacity: 1;
     }
     50% {
@@ -442,6 +480,10 @@ section {
 /* ---------- cube container ---------- */
 
 .icon-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     height: 100vh;
     display: flex;
@@ -457,17 +499,17 @@ section {
 }
 
 .cube1{
-    animation: cube 1s ease-in-out forwards 15s;
+    animation: cube 1s ease-in-out forwards 28s;
     opacity: 0;
     box-shadow: 10px 20px 10px #000;
 }
 
 .cube2{
-    animation: cube 1s ease-in-out forwards 16s;
+    animation: cube 1s ease-in-out forwards 29s;
     opacity: 0;
 }
 .cube3{
-    animation: cube 1s ease-in-out forwards 17s;
+    animation: cube 1s ease-in-out forwards 30s;
     opacity: 0;
 }
 
@@ -500,15 +542,23 @@ section {
     width: 100px;
     height: 100px;
     position: absolute;
-    top: 5%;
-    left: 42%;
+    top: 15%;
+    left: 30%;
     background: url("./svg/plane.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     offset-path: path("M0 369.5H620C620 369.5 780.5 359 909 308.5C1037.5 258 1180 165 1180 165L1296.5 83L1413 1");
     opacity: 0;
-    animation: apparition 2s linear forwards 18s, follow-path 3s linear forwards 19s;
+    z-index: -10;
+    animation: apparition 2s linear forwards 31s, follow-path 4s linear forwards 32.5s;
+}
+
+.line-plane{
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    opacity: 0;
 }
 
 @keyframes apparition {
