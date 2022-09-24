@@ -44,31 +44,31 @@ body {
 
 #logo path:nth-child(1) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 8s,  fill6 1s linear forwards 21.5s;
+  animation: fadeIn 2s ease forwards 7s,  fill6 1s linear forwards 21s;
 }
 #logo path:nth-child(2) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 9s , fill5 1s linear forwards 20.5s;
+  animation: fadeIn 2s ease forwards 8s , fill5 1s linear forwards 20.5s;
 }
 #logo path:nth-child(3) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 10s , fill4 1s linear forwards 19.5s;
+  animation: fadeIn 2s ease forwards 9s , fill4 1s linear forwards 20s;
 }
 #logo path:nth-child(4) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 10s, fill4 1s linear forwards 19.5s;
+  animation: fadeIn 2s ease forwards 9s, fill4 1s linear forwards 20s;
 }
 #logo path:nth-child(5) {
     opacity: 0;
-  animation: fadeIn 2s ease forwards 11s , fill3 1s linear forwards 18.5s;
+  animation: fadeIn 2s ease forwards 10s , fill3 1s linear forwards 19.5s;
 }
 #logo path:nth-child(6) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 12s, fill 1s linear forwards 17s;
+  animation: fadeIn 2s ease forwards 11s, fill 1s linear forwards 18.5s;
 }
 #logo path:nth-child(7) {
     opacity: 0;
-  animation: fadeIn 2.5s ease forwards 13s , fill2 1s linear forwards 18.5s;
+  animation: fadeIn 2s ease forwards 12s , fill2 1s linear forwards 19s;
 }
 
 @keyframes fadeIn {
@@ -250,7 +250,7 @@ body {
         width: 70px;
         height: 70px;
         top: 37.2%;
-        left:33.4%;
+        left:33.2%;
 
     }
 }
@@ -266,7 +266,7 @@ body {
         width: 56px;
         height: 56px;
         top: 38.4%;
-        left: 36.4%;
+        left: 36.2%;
 
     }
 }
@@ -283,43 +283,57 @@ body {
         width: 40px;
         height: 40px;
         top: 42.3%;
-        left: 35.4%;
+        left: 35.3%;
 
     }
 }
 
 /* ---------- Pen ---------- */
 
-/* .pen{
-    width: 100px;
-    height: 100px;
+.pen{
+    width: 120px;
+    height: 120px;
     position: absolute;
-    top: 25.5%;
-    right: 40%;
-    background: url("./svg/pen2.svg");
+    top: 17%;
+    right: 36%;
+    background: url("./svg/pen5.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     transform-origin: center;
-    offset-path: path("M0 125H46.8934C46.8934 125 168.079 -103.179 190 59.5226");
+    transform: rotate(10deg);
     opacity: 0;
-    animation: appear 1s linear forwards 14.5s, follow-line 2.5s linear forwards 16s, disappear 1s linear forwards 22s;
+    animation: appear 1s linear forwards 14s, linePen 0.75s linear forwards 15.35s, disappear 0.15s linear forwards 16s;
 }
-
- .line-pen{
+ /* .line-pen{
     stroke: black;
     opacity: 0;
     position: absolute;
-    top: 31%;
-    right: 35%;
+    top: 24%;
+    right: 36.5%;
 } */
 
+@keyframes linePen {
+    0% {
+        top: 17%;
+        right: 36%;
+    }
+    50% {
+        top: 30%;
+        right: 36%;
+    }
+    100% {
+        top: 25%;
+        right: 36%;
+    }
+    
+}
 
-@keyframes follow-line {
+/* @keyframes follow-line {
     to {
         offset-distance: 100%;
     }   
-}
+} */
 
 
 /* ---------- Ink ---------- */
@@ -340,11 +354,11 @@ section {
     top: 30%;
     right: 33%;
     opacity: 0;
-    animation: appear 2s linear forwards 14s, disappear 1s linear forwards 17s;
+    animation: appear 2s linear forwards 13s, disappear 1s linear forwards 18s;
 }
 
 #liquide {
-    animation: fluide1 1s linear 1 normal forwards 15s;
+    animation: fluide1 1s linear 1 normal forwards 16.75s;
 }
     @keyframes fluide1 { 
         0% {
@@ -356,7 +370,7 @@ section {
     } 
     
 #liquide2 {
-    animation: fluide2 1s linear 1 normal forwards 15s;
+    animation: fluide2 1s linear 1 normal forwards 16.75s;
 }
     @keyframes fluide2 {
             0% {
@@ -388,7 +402,7 @@ section {
         }
     } 
 #liquide3 {
-    animation: fluide3 1s linear 1 normal forwards 15s;
+    animation: fluide3 1s linear 1 normal forwards 16.75s;
 }
 @keyframes fluide3 {
         0% {
@@ -431,7 +445,7 @@ section {
     height: 35px;
     position: absolute;
     top: 38.5%;
-    right: 44%;
+    right: 43.5%;
     background: url("./svg/drop.svg");;
     background-repeat: no-repeat;
     background-size: contain;
@@ -439,7 +453,7 @@ section {
     offset-path: path("M110.5 13.4999C110.5 13.4999 41.5005 -42 41.5 84.5C41.4995 211 1.5 290 1.5 290");
     transform: rotate(-90deg);
     opacity: 0;
-    animation: drop 2s ease-out forwards 15.75s, followPathDrop 2s linear forwards 16s;
+    animation: drop 2s ease-out forwards 17.75s, followPathDrop 2s linear forwards 17.75s;
 }
 
 .line-drop{
@@ -459,7 +473,7 @@ section {
         opacity: 1;
     }
     40% {
-        opacity: 1;
+        opacity: 0;
     }
     50% {
         opacity: 0;
@@ -499,17 +513,17 @@ section {
 }
 
 .cube1{
-    animation: cube 1s ease-in-out forwards 28s;
+    animation: cube 1s ease-in-out forwards 27s;
     opacity: 0;
     box-shadow: 10px 20px 10px #000;
 }
 
 .cube2{
-    animation: cube 1s ease-in-out forwards 29s;
+    animation: cube 1s ease-in-out forwards 28s;
     opacity: 0;
 }
 .cube3{
-    animation: cube 1s ease-in-out forwards 30s;
+    animation: cube 1s ease-in-out forwards 29s;
     opacity: 0;
 }
 
@@ -539,25 +553,33 @@ section {
 /* ---------- Plane ---------- */
 
 .plane{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     position: absolute;
-    top: 15%;
-    left: 30%;
-    background: url("./svg/plane.svg");
+    top: 30%;
+    left: 20%;
+    background: url("./svg/plane2.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    offset-path: path("M0 369.5H620C620 369.5 780.5 359 909 308.5C1037.5 258 1180 165 1180 165L1296.5 83L1413 1");
+    /* offset-path: path("M1 283.65C2.64318 280.488 289.951 293.284 368.5 283.65C447.049 274.015 833.949 227.499 1089 1"); */
+    /* offset-path: path("M0 633H377.5C547.033 559.254 629.104 429.841 719 293C808.896 156.159 968 -137.5 968 -137.5"); */
+    /* offset-path: path("M0 633H497.229C666.84 567.15 790.062 482.689 880 360.5C969.938 238.311 1164 -28.5 1164 -28.5" ); */
+    /* offset-path: path("M0.5 580.5H740.5C796.167 579.667 934.2 556.5 1041 470.5C1147.8 384.5 1230.83 308.667 1259 281.5L1416.5 131L1555 1"); */
+    transform-origin: center ;
+    transform: rotate(5deg);
+    offset-path: path("M1 1C1 1 228 29.0498 290.5 47.9009C413.5 85 442.992 101.786 560 121.205C687.013 142.285 778 134.5 900.5 134.5C1023 134.5 1083.85 131.472 1201 128.37C1296 125.854 1328.7 126.708 1416.5 121.205C1515.5 115 1647 107.5 1647 107.5" );
     opacity: 0;
+    stroke-width:"3";
     z-index: -10;
-    animation: apparition 2s linear forwards 31s, follow-path 4s linear forwards 32.5s;
+    animation: apparition 2s linear forwards 30s, follow-path 4s linear forwards 30.5s;
 }
 
 .line-plane{
     position: absolute;
-    top: 25%;
+    top: 30%;
     left: 15%;
+    transform-origin: left;
     opacity: 0;
 }
 
