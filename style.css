@@ -172,8 +172,8 @@ body {
 .engrenage1{
     width: 300px;
     height: 300px;
-    top: 40%;
-    left:42%;
+    top: 40.1%;
+    left:42.2%;
     opacity: 0;
     animation: see 1s linear forwards, mouvement1 3s linear forwards 3s;
 }
@@ -242,15 +242,15 @@ body {
     from{
         width: 300px;
         height: 300px;
-        top: 40%;
-        left:42%;
+        top: 40.1%;
+        left:42.2%;
     }
 
     to { 
         width: 70px;
         height: 70px;
-        top: 37.2%;
-        left:33.2%;
+        top: 37.3%;
+        left:33.3%;
 
     }
 }
@@ -562,10 +562,6 @@ section {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    /* offset-path: path("M1 283.65C2.64318 280.488 289.951 293.284 368.5 283.65C447.049 274.015 833.949 227.499 1089 1"); */
-    /* offset-path: path("M0 633H377.5C547.033 559.254 629.104 429.841 719 293C808.896 156.159 968 -137.5 968 -137.5"); */
-    /* offset-path: path("M0 633H497.229C666.84 567.15 790.062 482.689 880 360.5C969.938 238.311 1164 -28.5 1164 -28.5" ); */
-    /* offset-path: path("M0.5 580.5H740.5C796.167 579.667 934.2 556.5 1041 470.5C1147.8 384.5 1230.83 308.667 1259 281.5L1416.5 131L1555 1"); */
     transform-origin: center ;
     transform: rotate(5deg);
     offset-path: path("M1 1C1 1 228 29.0498 290.5 47.9009C413.5 85 442.992 101.786 560 121.205C687.013 142.285 778 134.5 900.5 134.5C1023 134.5 1083.85 131.472 1201 128.37C1296 125.854 1328.7 126.708 1416.5 121.205C1515.5 115 1647 107.5 1647 107.5" );
